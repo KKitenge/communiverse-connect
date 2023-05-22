@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^7.2.0",
+    "nodemon": "^2.0.22"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "communiverse-connect",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KKitenge/communiverse-connect.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KKitenge/communiverse-connect/issues"
+  },
+  "homepage": "https://github.com/KKitenge/communiverse-connect#readme"
+}
