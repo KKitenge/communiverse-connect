@@ -5,6 +5,7 @@ module.exports = {
     getUsers(req, res) {
         User.find()
             .populate('thoughts')
+            .populate('friends')
             .then(async (users) => {
                 const userObj = {
                     users
