@@ -7,15 +7,15 @@ const thoughtSchema = new Schema(
             type: String,
             required: true,
             minLength: 1,
-            maxLength: 280,
+            maxLength: 280
         },
         createdAt: {
             type: Date,
-            default: Date.now,
+            default: Date.now
         },
         username: {
             type: String,
-            required: true,
+            required: true
         },
         reactions: [
             reactionSchema
@@ -24,7 +24,7 @@ const thoughtSchema = new Schema(
     {
         toJSON: {
             getters: true,
-            virtuals: true,
+            virtuals: true
         }
     }
 )

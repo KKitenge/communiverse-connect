@@ -4,7 +4,7 @@ module.exports = {
   //Get all thoughts
   getThoughts(req, res) {
     Thought.find()
-      .then((though) => res.json(though))
+      .then((thought) => res.json(thought))
       .catch((err) => res.status(500).json(err));
   },
   //Get a single thought
@@ -76,7 +76,7 @@ module.exports = {
               .json({ message: "There is no thought with this ID" })
           : User.findOneAndUpdate(
               { thoughts: req.params.thoughtId },
-              { $pull: { thoughts: req.params.applicationId } },
+              { $pull: { thoughts: req.params.thoughtId } },
               { new: true }
             )
       )
@@ -84,7 +84,7 @@ module.exports = {
         !user
           ? res.status(404).json({
               message:
-                "The thought is created but there is no user with this ID",
+                "The thought is successfully deleted",
             })
           : res.json({ message: "The thought is successfully deleted" })
       )

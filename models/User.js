@@ -6,25 +6,25 @@ const userSchema = new Schema(
             type: String,
             required: true,
             unique: true,
-            trim: true,
+            trim: true
         },
         email: {
             type: String,
             required: true,
             unique: true,
             // validate: [validateEmail, 'Please fill a valid email address'],
-            match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address'],
+            match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
         },
         thoughts: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'Thought',
+                ref: 'Thought'
             }
         ],
         friends: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'User',
+                ref: 'user'
             }
         ]
     },
@@ -39,6 +39,6 @@ userSchema.virtual('friendCount').get(function() {
     return this.friends.length;
 });
 
-const User = model('User', userSchema);
+const User = model('user', userSchema);
 
 module.exports = User;

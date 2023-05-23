@@ -4,21 +4,21 @@ const reactionSchema = new Schema(
     {
         reactionId: {
             type: Schema.ObjectId,
-            default: () => new Schema.ObjectId(),
+            default: () => new Schema.ObjectId()
         },
         reactionBody: {
             type: String,
             required: true,
             minlength: 1,
-            maxlength: 280,
+            maxlength: 280
         },
         username: {
             type: String,
-            required: true,
+            required: true
         },
         createdAt: {
             type: Date,
-            default: Date.now,
+            default: Date.now
         }
     },
     {
